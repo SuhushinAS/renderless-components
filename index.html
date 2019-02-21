@@ -8,16 +8,160 @@
     <style>
         .shower {
             --slide-ratio: calc(16 / 9);
+            --f-z_xxl: 88px;
+            --f-z_xl: 64px;
+            --f-z_l: 46px;
+            --f-z_m: 32px;
+            --f-z_s: 24px;
+            --f-z_xs: 16px;
+            --f-z_xxs: 12px;
+        }
+
+        .f-z_xxl {
+            font-size: var(--f-z_xxl);
+        }
+
+        .f-z_xl {
+            font-size: var(--f-z_xl);
+        }
+
+        .f-z_l {
+            font-size: var(--f-z_l);
+        }
+
+        .f-z_m {
+            font-size: var(--f-z_m);
+        }
+
+        .f-z_s {
+            font-size: var(--f-z_s);
+        }
+
+        .f-z_xs {
+            font-size: var(--f-z_xs);
+        }
+
+        .f-z_xxs {
+            font-size: var(--f-z_xxs);
+        }
+
+        h1 {
+            font-size: var(--f-z_xxl);
+        }
+
+        h2 {
+            font-size: var(--f-z_xl);
+        }
+
+        h3 {
+            font-size: var(--f-z_l);
+        }
+
+        h4 {
+            font-size: var(--f-z_m);
+        }
+
+        h5 {
+            font-size: var(--f-z_s);
+        }
+
+        h6 {
+            font-size: var(--f-z_xs);
+        }
+
+        p {
+            font-size: var(--f-z_xs);
+        }
+
+        .h_full {
+            height: 100%;
+        }
+
+        .hor__item {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .hor__item_w {
+            width: 25%;
+        }
+
+        .box {
+            display: table;
+            height: 100%;
+            position: relative;
+            width: 100%;
+        }
+
+        .box_cover {
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .row {
+            display: table-row;
+            position: relative;
+        }
+
+        .col {
+            display: table-cell;
+            position: relative;
+        }
+
+        .offset_20 {
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            top: 20px;
+        }
+
+        .offset_b_20 {
+            bottom: 20px;
+        }
+
+        .box_gray {
+            background-color: #e1e3e4;
+        }
+
+        .m_h_20 {
+            margin: 0 20px;
+        }
+
+        .m_v_20 {
+            margin: 20px 0;
+        }
+
+        .m_20 {
+            margin: 20px;
+        }
+
+        .p-t_20 {
+            padding-top: 20px;
+        }
+
+        .t-a_c {
+            text-align: center;
+        }
+
+        .v-a_m {
+            vertical-align: middle;
+        }
+
+        .w_full {
+            width: 100%;
         }
 
         .link_us {
+            --us-speed: 200ms;
             display: inline-block;
-            font-family: sans-serif;
-            /*font-size: 16px;*/
-            font-size: 25px;
+            font-family: "Trebuchet MS";
+            font-size: 24px;
             font-weight: 400;
-            /*line-height: 18.18px;*/
             line-height: 28px;
+            outline: none   ;
             position: relative;
         }
 
@@ -25,14 +169,14 @@
         .link_us:after,
         .link_us:before {
             height: 28px;
-            transition: all 600ms ease,
-            color 450ms ease 600ms,
-            background-color 450ms ease 600ms,
-            font-size ease 450ms,
-            font-weight ease 450ms,
-            letter-spacing ease 450ms,
-            width ease 450ms;
-            width: 154.67px;
+            transition: all calc(6 * var(--us-speed)) ease,
+            color calc(3 * var(--us-speed)) ease calc(5 * var(--us-speed)),
+            background-color calc(3 * var(--us-speed)) ease calc(5 * var(--us-speed)),
+            font-size ease calc(4 * var(--us-speed)),
+            font-weight ease calc(4 * var(--us-speed)),
+            letter-spacing ease calc(4 * var(--us-speed)),
+            width ease calc(4 * var(--us-speed));
+            width: 120.38px;
         }
 
         .link_us:after,
@@ -46,13 +190,13 @@
             position: absolute;
             right: 0;
             top: 0;
-            width: 154.67px;
+            width: 120.38px;
         }
 
         .link_us:after {
             color: transparent;
             content: attr(data-title);
-            font-size: 25px;
+            font-size: 24px;
             line-height: 28px;
             position: absolute;
             text-align: center;
@@ -63,16 +207,22 @@
         .link_us:hover {
             color: transparent;
             font-weight: 600;
-            transition: all 600ms ease 300ms, color 450ms ease, background-color 450ms ease, font-weight 0ms ease 300ms;
+            transition: all calc(6 * var(--us-speed)) ease calc(2 * var(--us-speed)),
+            color calc(3 * var(--us-speed)) ease,
+            background-color calc(3 * var(--us-speed)) ease,
+            font-size 0ms ease calc(2 * var(--us-speed)),
+            font-weight 0ms ease calc(2 * var(--us-speed));
         }
 
         .link_us:focus:after,
         .link_us:focus:before,
         .link_us:hover:after,
         .link_us:hover:before {
-            height: 154.67px;
+            height: 120.38px;
             pointer-events: all;
-            transition: all 600ms ease 300ms, color 450ms ease, background-color 450ms ease;
+            transition: all calc(6 * var(--us-speed)) ease calc(2 * var(--us-speed)),
+            color calc(3 * var(--us-speed)) ease,
+            background-color calc(3 * var(--us-speed)) ease;
         }
 
         .link_us:focus:before,
@@ -83,29 +233,39 @@
         .link_us:focus:after,
         .link_us:hover:after {
             color: #ffffff;
-            font-size: 32px;
-            left: 17px;
-            letter-spacing: 23px;
-            line-height: 45px;
+            font-size: 26px;
+            left: 9px;
+            letter-spacing: 20px;
+            line-height: 36px;
             box-sizing: border-box;
-            top: 22px;
-            width: 138px;
+            top: 16px;
         }
     </style>
 </head>
 <body class="shower list">
-
-    <header class="caption">
-        <h1>Renderless Components. Интегрируем всё с React</h1>
-        <p>Сухушин Александр</p>
-    </header>
-
-    <section class="slide clear" id="cover">
-        <h2>Renderless Components. Интегрируем всё с React</h2>
-        <p>
-            <em>Сухушин Александр</em>
-            <a class="link_us" data-title="USERSTORY" href="https://userstory.ru/" rel="noopener noreferrer" target="_blank">USERSTORY</a>
-        </p>
+    <section class="slide clear" id="intro">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <h2>Renderless Components.<br />Интегрируем всё с React</h2>
+                    <p class="f-z_s">
+                        <em>Сухушин Александр</em>
+                        <a class="link_us" data-title="USERSTORY" href="https://userstory.ru/" rel="noopener noreferrer" target="_blank">USERSTORY</a>
+                    </p>
+                </div>
+            </div>
+            <div class="row h_full">
+                <div class="col">
+                    <div class="box_cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            #intro p {
+                text-align: center;
+            }
+        </style>
     </section>
 
     <!--<section class="slide">
