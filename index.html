@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Renderless Components. Интегрируем всё с React</title>
+    <title>Renderless Components. Интегрируем всё в React</title>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="node_modules/@shower/ribbon/styles/styles.css" rel="stylesheet">
@@ -243,12 +243,18 @@
     </style>
 </head>
 <body class="shower list">
-    <section class="slide clear" id="intro">
+
+    <header class="caption">
+        <!--<h1>Renderless Components. Интегрируем всё в React</h1>
+        <p>Сухушин Александр</p>-->
+    </header>
+
+    <section class="slide clear" id="01_intro">
         <div class="box">
             <div class="row">
                 <div class="col">
-                    <h2>Renderless Components.<br />Интегрируем всё с React</h2>
-                    <p class="f-z_s">
+                    <h2>Renderless Components.<br />Интегрируем всё в React</h2>
+                    <p class="f-z_s t-a_c">
                         <em>Сухушин Александр</em>
                         <a class="link_us" data-title="USERSTORY" href="https://userstory.ru/" rel="noopener noreferrer" target="_blank">USERSTORY</a>
                     </p>
@@ -261,11 +267,115 @@
                 </div>
             </div>
         </div>
-        <style>
-            #intro p {
-                text-align: center;
-            }
-        </style>
+    </section>
+    <section class="slide" id="02_stack">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <h2>Наш стек</h2>
+                </div>
+            </div>
+            <div class="row h_full">
+                <div class="col">
+                    <div class="box_cover">
+                        <ul>
+                            <li>React</li>
+                            <li>Redux</li>
+                            <li>ReactRouter</li>
+                            <li>Babel</li>
+                            <li>Flow</li>
+                            <li>Webpack</li>
+                            <li>ESLint</li>
+                            <li>StyleLint</li>
+                            <li>Prettier</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide" id="03_feature">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <h2>Нам понадобились</h2>
+                </div>
+            </div>
+            <div class="row h_full">
+                <div class="col">
+                    <div class="box_cover">
+                        <ul>
+                            <li>Карты (Leaflet)</li>
+                            <li>WebSockets (Centrifuge)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide" id="04_problem">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <h2>Проблема</h2>
+                </div>
+            </div>
+            <div class="row h_full">
+                <div class="col">
+                    <div class="box_cover">
+                        Не работают с React
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide" id="04_react−leaflet">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <h2>React−Leaflet</h2>
+                </div>
+            </div>
+            <div class="row h_full">
+                <div class="col">
+                    <div class="box_cover">
+                        Есть React Leaflet, но он нам не подошёл.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide" id="05_react+leaflet">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <h2>React+Leaflet</h2>
+                </div>
+            </div>
+            <div class="row h_full">
+                <div class="col">
+                    <div class="box_cover">
+                        Как можно вывести карту leaflet в React
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide" id="06_map-elements">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <h2>Выводим элементы на карте</h2>
+                </div>
+            </div>
+            <div class="row h_full">
+                <div class="col">
+                    <div class="box_cover">
+                        Передаём карту через контекст.
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!--<section class="slide">
