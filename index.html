@@ -249,27 +249,181 @@
         <p>Сухушин Александр</p>-->
     </header>
 
-    <section class="slide clear" id="01_intro">
+    <section class="slide clear" id="intro">
         <div class="box">
             <div class="row">
                 <div class="col">
                     <h2>Renderless Components.<br />Интегрируем всё в React</h2>
-                    <p class="f-z_s t-a_c">
-                        <em>Сухушин Александр</em>
-                        <a class="link_us" data-title="USERSTORY" href="https://userstory.ru/" rel="noopener noreferrer" target="_blank">USERSTORY</a>
-                    </p>
                 </div>
             </div>
             <div class="row h_full">
                 <div class="col">
                     <div class="box_cover">
+                        <img src="pictures/react.svg" class="logo-main" alt="react">
+                        <div class="logo-small logo-small_1">
+                            <img src="pictures/leaflet.svg" class="logo-small__inner" alt="react">
+                        </div>
+                        <div class="logo-small logo-small_2">
+                            <img src="pictures/websocket.svg" class="logo-small__inner" alt="react">
+                        </div>
+                        <div class="logo-small logo-small_3">
+                            <img src="pictures/d3.svg" class="logo-small__inner" alt="react">
+                        </div>
+                        <div class="logo-small logo-small_4">
+                            <img src="pictures/leaflet.svg" class="logo-small__inner" alt="react">
+                        </div>
+                        <div class="logo-small logo-small_5">
+                            <img src="pictures/websocket.svg" class="logo-small__inner" alt="react">
+                        </div>
+                        <div class="logo-small logo-small_6">
+                            <img src="pictures/svg.svg" class="logo-small__inner" alt="react">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <style>
+            #intro {
+                /*background-color: #282c34;*/
+                --logo-animation-time: 20s;
+                --logo-offset: 150px;
+                --logo-offset-x: 90px;
+                --logo-offset-y: 120px;
+                --logo-size: 60px;
+            }
+
+            #intro .logo-main {
+                animation: intro-spin_forth infinite var(--logo-animation-time) linear;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                right: 0;
+                top: 0;
+                width: 300px;
+            }
+
+            #intro .logo-small {
+                position: absolute;
+                bottom: 0;
+                height: var(--logo-size);
+                left: 0;
+                margin: auto;
+                right: 0;
+                top: 0;
+                width: var(--logo-size);
+            }
+
+            #intro .logo-small_1 {
+                animation: intro-spin-small_1 infinite var(--logo-animation-time) linear;
+            }
+
+            #intro .logo-small_2 {
+                animation: intro-spin-small_2 infinite var(--logo-animation-time) linear;
+            }
+
+            #intro .logo-small_3 {
+                animation: intro-spin-small_3 infinite var(--logo-animation-time) linear;
+            }
+
+            #intro .logo-small_4 {
+                animation: intro-spin-small_4 infinite var(--logo-animation-time) linear;
+            }
+
+            #intro .logo-small_5 {
+                animation: intro-spin-small_5 infinite var(--logo-animation-time) linear;
+            }
+
+            #intro .logo-small_6 {
+                animation: intro-spin-small_6 infinite var(--logo-animation-time) linear;
+            }
+
+            #intro .logo-small__inner {
+                animation: intro-spin_back infinite var(--logo-animation-time) linear;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                right: 0;
+                top: 0;
+                width: var(--logo-size);
+            }
+
+            @keyframes intro-spin_forth {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            @keyframes intro-spin_back {
+                from {
+                    transform: rotate(360deg);
+                }
+                to {
+                    transform: rotate(0deg);
+                }
+            }
+
+            @keyframes intro-spin-small_1 {
+                from {
+                    transform: rotate(0deg) translate(var(--logo-offset-x), calc(-1 * var(--logo-offset-y)));
+                }
+                to {
+                    transform: rotate(360deg) translate(var(--logo-offset-x), calc(-1 * var(--logo-offset-y)));
+                }
+            }
+
+            @keyframes intro-spin-small_2 {
+                from {
+                    transform: rotate(0deg) translate(var(--logo-offset), 0);
+                }
+                to {
+                    transform: rotate(360deg) translate(var(--logo-offset), 0);
+                }
+            }
+
+            @keyframes intro-spin-small_3 {
+                from {
+                    transform: rotate(0deg) translate(var(--logo-offset-x), var(--logo-offset-y));
+                }
+                to {
+                    transform: rotate(360deg) translate(var(--logo-offset-x), var(--logo-offset-y));
+                }
+            }
+
+            @keyframes intro-spin-small_4 {
+                from {
+                    transform: rotate(0deg) translate(calc(-1 * var(--logo-offset-x)), var(--logo-offset-y));
+                }
+                to {
+                    transform: rotate(360deg) translate(calc(-1 * var(--logo-offset-x)), var(--logo-offset-y));
+                }
+            }
+
+            @keyframes intro-spin-small_5 {
+                from {
+                    transform: rotate(0deg) translate(calc(-1 * var(--logo-offset)), 0);
+                }
+                to {
+                    transform: rotate(360deg) translate(calc(-1 * var(--logo-offset)), 0);
+                }
+            }
+
+            @keyframes intro-spin-small_6 {
+                from {
+                    transform: rotate(0deg) translate(calc(-1 * var(--logo-offset-x)), calc(-1 * var(--logo-offset-y)));
+                }
+                to {
+                    transform: rotate(360deg) translate(calc(-1 * var(--logo-offset-x)), calc(-1 * var(--logo-offset-y)));
+                }
+            }
+        </style>
     </section>
 
-    <section class="slide" id="02_stack">
+    <section class="slide" id="stack">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -296,7 +450,7 @@
         </div>
     </section>
 
-    <section class="slide" id="03_feature">
+    <section class="slide" id="feature">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -316,7 +470,7 @@
         </div>
     </section>
 
-    <section class="slide" id="04_problem">
+    <section class="slide" id="problem">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -333,7 +487,7 @@
         </div>
     </section>
 
-    <section class="slide" id="04_react−leaflet">
+    <section class="slide" id="react−leaflet">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -350,7 +504,7 @@
         </div>
     </section>
 
-    <section class="slide" id="05_react+leaflet">
+    <section class="slide" id="react+leaflet">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -367,7 +521,7 @@
         </div>
     </section>
 
-    <section class="slide" id="06_map-elements">
+    <section class="slide" id="map-elements">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -384,7 +538,7 @@
         </div>
     </section>
 
-    <section class="slide" id="07_map-example">
+    <section class="slide" id="map-example">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -401,7 +555,7 @@
         </div>
     </section>
 
-    <section class="slide" id="08_socket">
+    <section class="slide" id="socket">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -418,7 +572,7 @@
         </div>
     </section>
 
-    <section class="slide" id="09_socket-connect">
+    <section class="slide" id="socket-connect">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -435,7 +589,7 @@
         </div>
     </section>
 
-    <section class="slide" id="09_socket-scheme">
+    <section class="slide" id="socket-scheme">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -453,7 +607,7 @@
         </div>
     </section>
 
-    <section class="slide" id="09_socket-subscribe">
+    <section class="slide" id="socket-subscribe">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -470,7 +624,7 @@
         </div>
     </section>
 
-    <section class="slide" id="09_socket-example">
+    <section class="slide" id="socket-example">
         <div class="box">
             <div class="row">
                 <div class="col">
