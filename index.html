@@ -51,6 +51,7 @@
 
         h2 {
             font-size: var(--f-z_xl);
+            margin: 0 !important;
         }
 
         h3 {
@@ -109,6 +110,10 @@
         .col {
             display: table-cell;
             position: relative;
+        }
+
+        .invisible {
+            visibility: hidden;
         }
 
         .offset_20 {
@@ -261,22 +266,34 @@
                     <div class="box_cover">
                         <img src="pictures/react.svg" class="logo-main" alt="react">
                         <div class="logo-small logo-small_1">
-                            <img src="pictures/leaflet.svg" class="logo-small__inner" alt="react">
+                            <div class="logo-small__inner">
+                                <img src="pictures/leaflet.svg" class="logo-small__img" alt="leaflet">
+                            </div>
                         </div>
                         <div class="logo-small logo-small_2">
-                            <img src="pictures/websocket.svg" class="logo-small__inner" alt="react">
+                            <div class="logo-small__inner">
+                                <img src="pictures/websocket.svg" class="logo-small__img" alt="websocket">
+                            </div>
                         </div>
                         <div class="logo-small logo-small_3">
-                            <img src="pictures/d3.svg" class="logo-small__inner" alt="react">
+                            <div class="logo-small__inner">
+                                <img src="pictures/d3.svg" class="logo-small__img" alt="d3">
+                            </div>
                         </div>
                         <div class="logo-small logo-small_4">
-                            <img src="pictures/leaflet.svg" class="logo-small__inner" alt="react">
+                            <div class="logo-small__inner">
+                                <img src="pictures/leaflet.svg" class="logo-small__img" alt="leaflet">
+                            </div>
                         </div>
                         <div class="logo-small logo-small_5">
-                            <img src="pictures/websocket.svg" class="logo-small__inner" alt="react">
+                            <div class="logo-small__inner">
+                                <img src="pictures/websocket.svg" class="logo-small__img" alt="websocket">
+                            </div>
                         </div>
                         <div class="logo-small logo-small_6">
-                            <img src="pictures/svg.svg" class="logo-small__inner" alt="react">
+                            <div class="logo-small__inner">
+                                <img src="pictures/svg.svg" class="logo-small__img" alt="svg">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -287,9 +304,9 @@
                 /*background-color: #282c34;*/
                 --logo-animation-time: 20s;
                 --logo-offset: 150px;
-                --logo-offset-x: 90px;
-                --logo-offset-y: 120px;
-                --logo-size: 60px;
+                --logo-offset-x: 75px;
+                --logo-offset-y: 129.903810568px;
+                --logo-size: 50px;
             }
 
             #intro .logo-main {
@@ -339,14 +356,15 @@
             }
 
             #intro .logo-small__inner {
-                animation: intro-spin_back infinite var(--logo-animation-time) linear;
+                left: 50%;
                 position: absolute;
-                bottom: 0;
-                left: 0;
-                margin: auto;
-                right: 0;
-                top: 0;
-                width: var(--logo-size);
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            #intro .logo-small__img {
+                animation: intro-spin_back infinite var(--logo-animation-time) linear;
+                height: var(--logo-size);
             }
 
             @keyframes intro-spin_forth {
@@ -433,21 +451,65 @@
             <div class="row h_full">
                 <div class="col">
                     <div class="box_cover">
-                        <ul>
-                            <li>React</li>
-                            <li>Redux</li>
-                            <li>ReactRouter</li>
-                            <li>Babel</li>
-                            <li>Flow</li>
-                            <li>Webpack</li>
-                            <li>ESLint</li>
-                            <li>StyleLint</li>
-                            <li>Prettier</li>
-                        </ul>
+                        <div class="stack__section stack__section_main">
+                            <img class="stack__img" src="pictures/react.svg" alt="react">
+                            <img class="stack__img" src="pictures/redux.svg" alt="redux">
+                            <img class="stack__img" src="pictures/react-router.svg" alt="react-router">
+                            <img class="stack__img" src="pictures/babel.svg" alt="babel">
+                            <img class="stack__img" src="pictures/flow.svg" alt="flow">
+                            <img class="stack__img" src="pictures/webpack.svg" alt="webpack">
+                            <img class="stack__img" src="pictures/eslint.svg" alt="eslint">
+                            <img class="stack__img" src="pictures/stylelint.svg" alt="stylelint">
+                            <img class="stack__img" src="pictures/prettier.svg" alt="prettier">
+                        </div>
+                        <div class="next">
+                            <div class="stack__divider"></div>
+                            <div class="stack__section stack__section_add">
+                                <div class="stack__more invisible">...</div>
+                                <img class="stack__img invisible" src="pictures/webgl.svg" alt="webgl">
+                                <img class="stack__img invisible" src="pictures/svg.svg" alt="svg">
+                                <img class="stack__img" src="pictures/leaflet.svg" alt="react">
+                                <img class="stack__img" src="pictures/websocket.svg" alt="redux">
+                                <img class="stack__img next" src="pictures/svg.svg" alt="svg">
+                                <img class="stack__img next" src="pictures/webgl.svg" alt="webgl">
+                                <div class="stack__more next">...</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <style>
+            .stack__section {
+                margin: 20px auto;
+                text-align: center;
+                width: 500px;
+            }
+            .stack__section_add {
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%);
+                white-space: nowrap;
+                width: 500%;
+            }
+            .stack__divider {
+                border-bottom: 1px solid var(--color-grey);
+                margin: 20px auto;
+                width: 300px;
+            }
+            .stack__img {
+                height: 60px;
+                margin: 10px;
+                vertical-align: middle;
+            }
+            .stack__more {
+                display: inline-block;
+                height: 60px;
+                line-height: 60px;
+                margin: 10px;
+                vertical-align: middle;
+            }
+        </style>
     </section>
 
     <section class="slide" id="feature">
