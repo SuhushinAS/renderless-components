@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>React Renderless Components. Как интегрировать неинтегрируемое?</title>
+    <title>Renderless Components в React. Как интегрировать неинтегрируемое?</title>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="node_modules/@shower/ribbon/styles/styles.css" rel="stylesheet">
@@ -250,7 +250,7 @@
 <body class="shower list">
 
     <header class="caption">
-        <!--<h1>React Renderless Components. Как интегрировать неинтегрируемое?</h1>
+        <!--<h1>Renderless Components в React.<br /> Как интегрировать неинтегрируемое?</h1>
         <p>Сухушин Александр</p>-->
     </header>
 
@@ -258,7 +258,7 @@
         <div class="box">
             <div class="row">
                 <div class="col">
-                    <h2>React Renderless Components.<br />Как интегрировать неинтегрируемое?</h2>
+                    <h2>Renderless Components в React.<br /> Как интегрировать неинтегрируемое?</h2>
                 </div>
             </div>
             <div class="row h_full">
@@ -302,7 +302,7 @@
         <style>
             #intro {
                 /*background-color: #282c34;*/
-                --logo-animation-time: 20s;
+                --logo-animation-time: 12s;
                 --logo-offset: 150px;
                 --logo-offset-x: 75px;
                 --logo-offset-y: 129.903810568px;
@@ -465,14 +465,8 @@
                         <div class="next">
                             <div class="stack__divider"></div>
                             <div class="stack__section stack__section_add">
-                                <div class="stack__more invisible">...</div>
-                                <img class="stack__img invisible" src="pictures/webgl.svg" alt="webgl">
-                                <img class="stack__img invisible" src="pictures/svg.svg" alt="svg">
                                 <img class="stack__img" src="pictures/leaflet.svg" alt="react">
                                 <img class="stack__img" src="pictures/websocket.svg" alt="redux">
-                                <img class="stack__img next" src="pictures/svg.svg" alt="svg">
-                                <img class="stack__img next" src="pictures/webgl.svg" alt="webgl">
-                                <div class="stack__more next">...</div>
                             </div>
                         </div>
                     </div>
@@ -502,34 +496,7 @@
                 margin: 10px;
                 vertical-align: middle;
             }
-            .stack__more {
-                display: inline-block;
-                height: 60px;
-                line-height: 60px;
-                margin: 10px;
-                vertical-align: middle;
-            }
         </style>
-    </section>
-
-    <section class="slide" id="feature">
-        <div class="box">
-            <div class="row">
-                <div class="col">
-                    <h2>Нам понадобились</h2>
-                </div>
-            </div>
-            <div class="row h_full">
-                <div class="col">
-                    <div class="box_cover">
-                        <ul>
-                            <li>Карты (Leaflet)</li>
-                            <li>WebSockets (Centrifuge)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section class="slide" id="problem">
@@ -559,14 +526,63 @@
             <div class="row h_full">
                 <div class="col">
                     <div class="box_cover">
-                        Есть React Leaflet, но он нам не подошёл.
+                        <iframe src="https://react-leaflet.js.org/">
+                            <img src="/pictures/react-leaflet.png" alt="react−leaflet">
+                        </iframe>
                     </div>
                 </div>
             </div>
         </div>
+        <style>
+            #react−leaflet .box_cover {
+                overflow: hidden;
+            }
+            #react−leaflet iframe {
+                border: 0;
+                height: 100%;
+                overflow: auto;
+                width: 100%;
+            }
+            #react−leaflet img {
+                max-width: 100%;
+            }
+        </style>
     </section>
 
-    <section class="slide" id="react+leaflet">
+    <section class="slide" id="leaflet">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <h2>Leaflet</h2>
+                </div>
+            </div>
+            <div class="row h_full">
+                <div class="col">
+                    <div class="box_cover">
+                        <iframe src="https://leafletjs.com/index.html">
+                            <img src="/pictures/leaflet.png" alt="leaflet">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            #leaflet .box_cover {
+                overflow: hidden;
+            }
+            #leaflet iframe {
+                border: 0;
+                height: 100%;
+                overflow: auto;
+                width: 100%;
+            }
+            #leaflet img {
+                max-width: 100%;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="reactleaflet">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -576,11 +592,94 @@
             <div class="row h_full">
                 <div class="col">
                     <div class="box_cover">
-                        Как можно вывести карту leaflet в React
+                        <img src="/pictures/reactleaflet.png" alt="reactleaflet">
                     </div>
                 </div>
             </div>
         </div>
+        <style>
+            #reactleaflet .box_cover {
+                overflow: auto;
+            }
+            #reactleaflet img {
+                max-width: 100%;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="tile-layer">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <h2>Tile layer</h2>
+                </div>
+            </div>
+            <div class="row h_full">
+                <div class="col">
+                    <div class="box_cover">
+                        <img src="/pictures/tile-layer.png" alt="Tile layer">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            #tile-layer .box_cover {
+                overflow: auto;
+            }
+            #tile-layer img {
+                max-width: 100%;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="map-view">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <h2>Map View</h2>
+                </div>
+            </div>
+            <div class="row h_full">
+                <div class="col">
+                    <div class="box_cover">
+                        <img src="/pictures/map-view.png" alt="Map View">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            #map-view .box_cover {
+                overflow: auto;
+            }
+            #map-view img {
+                max-width: 100%;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="example-map">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <h2>Example Map</h2>
+                </div>
+            </div>
+            <div class="row h_full">
+                <div class="col">
+                    <div class="box_cover">
+                        <img src="/pictures/example-map.png" alt="Example Map">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            #example-map .box_cover {
+                overflow: auto;
+            }
+            #example-map img {
+                max-width: 100%;
+            }
+        </style>
     </section>
 
     <section class="slide" id="map-elements">
