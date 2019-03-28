@@ -6,6 +6,11 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="node_modules/@shower/ribbon/styles/styles.css" rel="stylesheet">
     <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
         .shower {
             --slide-ratio: calc(16 / 9);
             --f-z_xxl: 88px;
@@ -109,6 +114,7 @@
 
         .col {
             display: table-cell;
+            overflow: hidden;
             position: relative;
         }
 
@@ -680,40 +686,6 @@
                 max-width: 100%;
             }
         </style>
-    </section>
-
-    <section class="slide" id="map-elements">
-        <div class="box">
-            <div class="row">
-                <div class="col">
-                    <h2>Выводим элементы на карте</h2>
-                </div>
-            </div>
-            <div class="row h_full">
-                <div class="col">
-                    <div class="box_cover">
-                        Передаём карту через контекст.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="slide" id="map-example">
-        <div class="box">
-            <div class="row">
-                <div class="col">
-                    <h2>Что получилось</h2>
-                </div>
-            </div>
-            <div class="row h_full">
-                <div class="col">
-                    <div class="box_cover">
-                        Пример рабочего кода
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section class="slide" id="socket">
