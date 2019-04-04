@@ -168,11 +168,11 @@
         .link_us {
             --us-speed: 200ms;
             display: inline-block;
-            font-family: "Trebuchet MS";
+            font-family: "Trebuchet MS", sans-serif;
             font-size: 24px;
             font-weight: 400;
             line-height: 28px;
-            outline: none   ;
+            outline: none;
             position: relative;
         }
 
@@ -251,13 +251,31 @@
             box-sizing: border-box;
             top: 16px;
         }
+        .slide.image .box_cover {
+            overflow: auto;
+        }
+        .slide.image img {
+            max-width: 100%;
+        }
+        .slide.iframe .box_cover {
+            overflow: hidden;
+        }
+        .slide.iframe iframe {
+            border: 0;
+            height: 100%;
+            overflow: auto;
+            width: 100%;
+        }
+        .slide.iframe img {
+            max-width: 100%;
+        }
     </style>
 </head>
 <body class="shower list">
 
     <header class="caption">
-        <!--<h1>Renderless Components в React.<br /> Как интегрировать неинтегрируемое?</h1>
-        <p>Сухушин Александр</p>-->
+        <h1>Renderless Components в React.<br /> Как интегрировать неинтегрируемое?</h1>
+        <p>Сухушин Александр</p>
     </header>
 
     <section class="slide clear" id="intro">
@@ -447,6 +465,42 @@
         </style>
     </section>
 
+    <section class="slide" id="about">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <h2>Обо мне</h2>
+                </div>
+            </div>
+            <div class="row h_full">
+                <div class="col">
+                    <div class="about">
+                        <div class="about__me">
+                            Сухушин Александр
+                        </div>
+                        <div class="about__company">
+                            <a class="link_us" data-title="USERSTORY" href="https://userstory.ru/">USERSTORY</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .about {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                justify-content: center;
+            }
+            .about__me {
+            }
+            .about__company {
+                padding: 60px;
+            }
+        </style>
+    </section>
+
     <section class="slide" id="stack">
         <div class="box">
             <div class="row">
@@ -505,24 +559,7 @@
         </style>
     </section>
 
-    <section class="slide" id="problem">
-        <div class="box">
-            <div class="row">
-                <div class="col">
-                    <h2>Проблема</h2>
-                </div>
-            </div>
-            <div class="row h_full">
-                <div class="col">
-                    <div class="box_cover">
-                        Не работают с React
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="slide" id="react−leaflet">
+    <section class="slide iframe" id="react−leaflet">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -539,23 +576,9 @@
                 </div>
             </div>
         </div>
-        <style>
-            #react−leaflet .box_cover {
-                overflow: hidden;
-            }
-            #react−leaflet iframe {
-                border: 0;
-                height: 100%;
-                overflow: auto;
-                width: 100%;
-            }
-            #react−leaflet img {
-                max-width: 100%;
-            }
-        </style>
     </section>
 
-    <section class="slide" id="leaflet">
+    <section class="slide iframe" id="leaflet">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -572,48 +595,26 @@
                 </div>
             </div>
         </div>
-        <style>
-            #leaflet .box_cover {
-                overflow: hidden;
-            }
-            #leaflet iframe {
-                border: 0;
-                height: 100%;
-                overflow: auto;
-                width: 100%;
-            }
-            #leaflet img {
-                max-width: 100%;
-            }
-        </style>
     </section>
 
-    <section class="slide" id="reactleaflet">
+    <section class="slide image" id="map">
         <div class="box">
             <div class="row">
                 <div class="col">
-                    <h2>React+Leaflet</h2>
+                    <h2>Map</h2>
                 </div>
             </div>
             <div class="row h_full">
                 <div class="col">
                     <div class="box_cover">
-                        <img src="pictures/reactleaflet.png" alt="reactleaflet">
+                        <img src="pictures/map.png" alt="Map">
                     </div>
                 </div>
             </div>
         </div>
-        <style>
-            #reactleaflet .box_cover {
-                overflow: auto;
-            }
-            #reactleaflet img {
-                max-width: 100%;
-            }
-        </style>
     </section>
 
-    <section class="slide" id="tile-layer">
+    <section class="slide image" id="tile-layer">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -628,17 +629,26 @@
                 </div>
             </div>
         </div>
-        <style>
-            #tile-layer .box_cover {
-                overflow: auto;
-            }
-            #tile-layer img {
-                max-width: 100%;
-            }
-        </style>
     </section>
 
-    <section class="slide" id="map-view">
+    <section class="slide image" id="geo-json">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <h2>GeoJSON</h2>
+                </div>
+            </div>
+            <div class="row h_full">
+                <div class="col">
+                    <div class="box_cover">
+                        <img src="pictures/geo-json.png" alt="GeoJSON">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide image" id="map-view">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -653,42 +663,45 @@
                 </div>
             </div>
         </div>
-        <style>
-            #map-view .box_cover {
-                overflow: auto;
-            }
-            #map-view img {
-                max-width: 100%;
-            }
-        </style>
     </section>
 
-    <section class="slide" id="example-map">
+    <section class="slide image" id="map-usage">
         <div class="box">
             <div class="row">
                 <div class="col">
-                    <h2>Example Map</h2>
+                    <h2>Map Usage</h2>
                 </div>
             </div>
             <div class="row h_full">
                 <div class="col">
                     <div class="box_cover">
-                        <img src="pictures/example-map.png" alt="Example Map">
+                        <img src="pictures/map-usage.png" alt="Map Usage">
                     </div>
                 </div>
             </div>
         </div>
-        <style>
-            #example-map .box_cover {
-                overflow: auto;
-            }
-            #example-map img {
-                max-width: 100%;
-            }
-        </style>
     </section>
 
-    <section class="slide" id="key-handler">
+    <section class="slide" id="map-example">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <h2>Map Example</h2>
+                </div>
+            </div>
+            <div class="row h_full">
+                <div class="col">
+                    <div class="box_cover t-a_c">
+                        <a href="https://suhushinas.github.io/2019-04-27_renderless-components-example/#/example-map" target="_blank">
+                            <img src="pictures/map-example.png" alt="Map Example">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide image" id="key-handler">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -703,17 +716,9 @@
                 </div>
             </div>
         </div>
-        <style>
-            #key-handler .box_cover {
-                overflow: auto;
-            }
-            #key-handler img {
-                max-width: 100%;
-            }
-        </style>
     </section>
 
-    <section class="slide" id="key-handler-usage">
+    <section class="slide image" id="key-handler-usage">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -728,17 +733,9 @@
                 </div>
             </div>
         </div>
-        <style>
-            #key-handler-usage .box_cover {
-                overflow: auto;
-            }
-            #key-handler-usage img {
-                max-width: 100%;
-            }
-        </style>
     </section>
 
-    <section class="slide" id="socket-centrifuge">
+    <section class="slide image" id="socket-centrifuge">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -753,17 +750,9 @@
                 </div>
             </div>
         </div>
-        <style>
-            #socket-centrifuge .box_cover {
-                overflow: auto;
-            }
-            #socket-centrifuge img {
-                max-width: 100%;
-            }
-        </style>
     </section>
 
-    <section class="slide" id="socket-subscribe">
+    <section class="slide image" id="socket-subscribe">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -778,17 +767,9 @@
                 </div>
             </div>
         </div>
-        <style>
-            #socket-subscribe .box_cover {
-                overflow: auto;
-            }
-            #socket-subscribe img {
-                max-width: 100%;
-            }
-        </style>
     </section>
 
-    <section class="slide" id="socket-usage">
+    <section class="slide image" id="socket-usage">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -803,14 +784,6 @@
                 </div>
             </div>
         </div>
-        <style>
-            #socket-usage .box_cover {
-                overflow: auto;
-            }
-            #socket-usage img {
-                max-width: 100%;
-            }
-        </style>
     </section>
 
     <!--<section class="slide">
