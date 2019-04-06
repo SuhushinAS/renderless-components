@@ -1,66 +1,73 @@
-# Shower Presentation Template [![Build Status](https://travis-ci.org/shower/shower.svg?branch=master)](https://travis-ci.org/shower/shower)
+# Renderless Components в React. Как интегрировать неинтегрируемое?
 
-<img src="pictures/logo.png" width="250" alt="Shower logo">
+## Вступление
 
-> Shower ['ʃəuə] noun. A person or thing that shows.
+###### intro
+Привет DevPRO, представляю вам доклад "Renderless Components в React. Как интегрировать неинтегрируемое?"
 
-1. Built on HTML, CSS and vanilla JavaScript
-2. Works in all modern browsers
-3. Themes are separated from engine
-4. Fully keyboard accessible
-5. Printable to PDF
+###### about
+Для начала - немного о себе: меня зовут Сухушин Александр. Я - Frontend-разработчик в компании **Userstory** (навести на ссылку).
+Наша компания занимается проектированием и разработкой сайтов и комплексных информационных систем для автоматизации бизнеса,
+а также решениями коммерческих и маркетинговых задач.
 
-[See it in action](http://shwr.me/). Includes [Ribbon](https://github.com/shower/ribbon/) and [Material](https://github.com/shower/material/) themes, and [core](https://github.com/shower/core/) with plugins.
+###### stack
+Основоной наш frontend стек, это _React_, _Redux_, _ReactRouter_, _Babel_, _Flow_, _Webpack_, _ESLint_, _StyleLint_, _Prettier_, и ещё много другого.
+3.1. В последнем проекте нам нужно было работать с картами, наиболее популярная библиотека - это _Leaflet_,
+также понадобилось обновление данных через web-сокеты, для этого мы использовали библиотеку _Centrifuge_.
+Основная проблема этих двух библиотек то, что у них нет реализации для _React_.
 
-Follow [@shower_me](https://twitter.com/shower_me) for support and updates, [file an issue](https://github.com/shower/shower/issues/new) if you have any.
+###### react−leaflet
+На самом деле есть _React-Leaflet_, но нам нужно было использовать сторонние плагины и _React-Leaflet_ не давал нужной гибкости. Что же делать?
 
-## Quick Start
+###### leaflet
+Для начала давайте посмотрим, как работает сам _LeafLet_, заглянем в официальную документацию: Нужно создать `div`,
+который будет выступать в качестве контейнера для карты, и вызываем метод `L.map()`, куда передать идентификатор контейнера или узел _DOM_.
+Также, нужно спозиционировать карту и насторить Тайл-сервер (это сервер картинок для карты).
 
-1. Download and unzip [template archive](http://shwr.me/shower.zip)
-2. Open `index.html` and start creating your presentation
+###### map
+Мы можем реализовать это в React следующим образом: В методе render, мы срздаём `div` и сохраняем ссылку на него,
+в `componentDidMount` мы создаём карту, а `componentWillUnmount` - удаляем. Так же через контекст мы передаём созданый экземпляр `leaflet`.
 
-## Deploy to Netlify
+###### tile-layer
+Тайл-сервер: `render` - `null`. На `componentDidMount`, мы добавляем слой тайл-сервера, на `componentWillUnmount` - удаляем.
+На `componentDidUpdate` - удаляем старый и добавляем новый. добавление и удаление слоёв - это уже вызовы методов _Leaflet_,
+которые можно посмотреть в документации.
 
-By clicking the button below you can fork this repo and deploy it to Netlify.
+###### geo-json
+С позиционированием немного посложнее: Самый простой способ - это задать координаты центра и масштаб,
+но по проекту требовалось позиционировать карту, чтобы у неё был максимальный масштаб, но при этом в экран попадали все объекты.
+Объекты на картах обычно описываются в формате _GeoJSON_, это обычный _JSON_, с определённой структурой. Для примера, я описал несколько объектов:
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/shower/shower)
+###### map-view
+В `componentDidMount` я вызываю метод `fly()`, который получает `view` - это объект или массив объектов в формате _GeoJSON_,
+из `view` мы формируем слой для _Leaflet_ и получаем у него `bounds` - это минимальная прямоуголяная область, которая включает все объекты слоя.
+B далее, если `bounds` - корректный - мы позиционируем карту на нём, иначе показываем весь мир.
+В `componentDidUpdate` я проверяю, изменились ли `view` и `bounds` и вызываю метод `fly()`.
+И также я добавил обработчик измнения позиционирования карты, который вызывает `onViewChange`, если он был передан в `props`.
 
-By doing this you would get a GitHub repo linked with Netlify in a way any change to the repo would trigger a shower rebuild and deploy to Netlify servers, which allows for a really easy way to create and share Shower presentation without the need to install anything locally.
+###### map-usage
+Давайте посмотрим пример, как это выглядит в использовании...
 
-## Advanced
+###### [map-example](https://suhushinas.github.io/2019-04-27_renderless-components-example/#/example-map)
+И, наконец, посмотрим на результат: Здесь мы можем менять позиционирование карты, при этом фиксируется текущее положение.
+Можем менять тайл сервер, например есть такой, очень прикольный. Также можем отображать на карте разные объекты: например, маркер,
+где проходит **DevPRO**, маркер, где находится наш новый офис, и путь, между ними.
 
-1. Сlone this repository `git clone --depth=1 git@github.com:shower/shower.git`, (`--depth=1` will make it way faster).
-2. [Create](https://github.com/new) a new blank repository and copy its cloning address `git@github.com:USER/REPO.git`.
-3. Change remote of your local clone to the one you’ve just copied `git remote set-url origin git@github.com:USER/REPO.git`.
-4. Push your local clone to GitHub `git push -u origin master`.
-6. Install dependencies `npm install` and start it `npm start`.
+###### socket-centrifuge
+Подобным образом, когда мы ничего не выводим, а просто вызываем действия на методах жизненного цикла, можно интегрирровать практически что угодно:
+Например так я интегрировал сокеты, `componentDidMount` - я подключаюсь к серверу центрифуги,
+`componentWillUnmount` - отключаюсь, и передаю экзепляр центрифуги через контекст дочерним элементам.
 
-Once you’re done you can build a clean copy of your slides:
+###### socket-subscribe
+Аналогично - компонент для подписки `componentDidMount` - подписывемся, `componentWillUnmount` - отписываемся.
+Во время подписки - регистрируем обработчик сообщений.
 
-    npm run prepare
+###### socket-usage
+В использовании это выглядит вот так: Снаружи мы оборачиваем компонентов `Centrifuge`, куда передаём данные для подключения.
+Внутри выводим компонент `Subscribe`, куда передаём название канала и обработчик сообщения.
 
-And you’ll find your presentation in `prepared` folder with only needed files in it. You can also run `npm run archive` to get the same files in `archive.zip`. But there’s more! You can easily publish your presentation online by running:
+###### [socket-example](https://suhushinas.github.io/2019-04-27_renderless-components-example/#/example-socket)
+Я подготовил пример, как по сокетам мы будем получать координаты точки:
 
-    npm run publish
-
-And you’ll have your slides published to `http://USER.github.io/REPO/`.
-
-## Usage Examples
-
-- [Semantic for cynics](https://pepelsbey.net/pres/semantics/en/)
-- [Inhuman UI](https://pepelsbey.net/pres/inhuman-ui/)
-- [My Vanilla CSS](https://pepelsbey.net/pres/vanilla-css/)
-- [I’m in IoT](https://pepelsbey.net/pres/im-in-iot/)
-
-## Browser Support
-
-Latest stable versions of Chrome, Edge, Firefox, and Safari are supported.
-
-## Contributing
-
-You’re always welcome to contribute. Fork project, make changes and send it as pull request. But it’s better to file an [issue](https://github.com/shower/shower/issues) with your idea first. Read [contributing rules](CONTRIBUTING.md) for more details.
-
-Main contributors in historical order: [pepelsbey](https://github.com/pepelsbey), [jahson](https://github.com/jahson), [miripiruni](https://github.com/miripiruni), [kizu](https://github.com/kizu), [artpolikarpov](https://github.com/artpolikarpov), [tonyganch](https://github.com/tonyganch), [zloylos](https://github.com/zloylos).
-
----
-Licensed under [MIT License](LICENSE.md).
+###### questions
+На этом у меня всё, пожалуйста ваши вопросы.

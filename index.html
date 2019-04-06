@@ -4,6 +4,7 @@
     <title>Renderless Components в React. Как интегрировать неинтегрируемое?</title>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="favicon.ico" rel="shortcut icon" />
     <link href="node_modules/@shower/ribbon/styles/styles.css" rel="stylesheet">
     <style>
         html {
@@ -255,18 +256,6 @@
             overflow: auto;
         }
         .slide.image img {
-            max-width: 100%;
-        }
-        .slide.iframe .box_cover {
-            overflow: hidden;
-        }
-        .slide.iframe iframe {
-            border: 0;
-            height: 100%;
-            overflow: auto;
-            width: 100%;
-        }
-        .slide.iframe img {
             max-width: 100%;
         }
     </style>
@@ -559,7 +548,7 @@
         </style>
     </section>
 
-    <section class="slide iframe" id="react−leaflet">
+    <section class="slide image" id="react−leaflet">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -569,16 +558,14 @@
             <div class="row h_full">
                 <div class="col">
                     <div class="box_cover">
-                        <iframe src="https://react-leaflet.js.org/">
-                            <img src="pictures/react-leaflet.png" alt="react−leaflet">
-                        </iframe>
+                        <img src="pictures/react-leaflet.png" alt="react−leaflet">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="slide iframe" id="leaflet">
+    <section class="slide image" id="leaflet">
         <div class="box">
             <div class="row">
                 <div class="col">
@@ -588,9 +575,7 @@
             <div class="row h_full">
                 <div class="col">
                     <div class="box_cover">
-                        <iframe src="https://leafletjs.com/index.html">
-                            <img src="pictures/leaflet.png" alt="leaflet">
-                        </iframe>
+                        <img src="pictures/leaflet.png" alt="leaflet">
                     </div>
                 </div>
             </div>
@@ -694,59 +679,6 @@
                     <div class="box_cover t-a_c">
                         <a href="https://suhushinas.github.io/2019-04-27_renderless-components-example/#/example-map" target="_blank">
                             <img src="pictures/map-example.png" alt="Map Example">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="slide image" id="key-handler">
-        <div class="box">
-            <div class="row">
-                <div class="col">
-                    <h2>Key Handler</h2>
-                </div>
-            </div>
-            <div class="row h_full">
-                <div class="col">
-                    <div class="box_cover">
-                        <img src="pictures/key-handler.png" alt="Key Handler">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="slide image" id="key-handler-usage">
-        <div class="box">
-            <div class="row">
-                <div class="col">
-                    <h2>Key Handler Usage</h2>
-                </div>
-            </div>
-            <div class="row h_full">
-                <div class="col">
-                    <div class="box_cover">
-                        <img src="pictures/key-handler-usage.png" alt="Key Handler Usage">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="slide" id="key-handler-example">
-        <div class="box">
-            <div class="row">
-                <div class="col">
-                    <h2>Key Handler Example</h2>
-                </div>
-            </div>
-            <div class="row h_full">
-                <div class="col">
-                    <div class="box_cover t-a_c">
-                        <a href="https://suhushinas.github.io/2019-04-27_renderless-components-example/#/example-key" target="_blank">
-                            <img src="pictures/key-handler-example.png" alt="Map Example">
                         </a>
                     </div>
                 </div>
