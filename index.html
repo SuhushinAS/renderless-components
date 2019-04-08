@@ -170,17 +170,19 @@
             --us-speed: 200ms;
             display: inline-block;
             font-family: "Trebuchet MS", sans-serif;
-            font-size: 24px;
+            font-size: 36px;
             font-weight: 400;
-            line-height: 28px;
+            letter-spacing: 0;
+            line-height: 40px;
             outline: none;
             position: relative;
+            text-align: center;
         }
 
         .link_us,
         .link_us:after,
         .link_us:before {
-            height: 28px;
+            height: 40px;
             transition: all calc(6 * var(--us-speed)) ease,
             color calc(3 * var(--us-speed)) ease calc(5 * var(--us-speed)),
             background-color calc(3 * var(--us-speed)) ease calc(5 * var(--us-speed)),
@@ -188,7 +190,7 @@
             font-weight ease calc(4 * var(--us-speed)),
             letter-spacing ease calc(4 * var(--us-speed)),
             width ease calc(4 * var(--us-speed));
-            width: 120.38px;
+            width: 180.56px;
         }
 
         .link_us:after,
@@ -202,14 +204,15 @@
             position: absolute;
             right: 0;
             top: 0;
-            width: 120.38px;
+            width: 180.56px;
         }
 
         .link_us:after {
             color: transparent;
             content: attr(data-title);
-            font-size: 24px;
-            line-height: 28px;
+            font-size: 36px;
+            letter-spacing: 0;
+            line-height: 40px;
             position: absolute;
             text-align: center;
             word-break: break-all;
@@ -230,7 +233,7 @@
         .link_us:focus:before,
         .link_us:hover:after,
         .link_us:hover:before {
-            height: 120.38px;
+            height: 180.56px;
             pointer-events: all;
             transition: all calc(6 * var(--us-speed)) ease calc(2 * var(--us-speed)),
             color calc(3 * var(--us-speed)) ease,
@@ -245,12 +248,12 @@
         .link_us:focus:after,
         .link_us:hover:after {
             color: #ffffff;
-            font-size: 26px;
-            left: 9px;
-            letter-spacing: 20px;
-            line-height: 36px;
+            font-size: 36px;
+            left: 13px;
+            letter-spacing: 32px;
+            line-height: 53px;
             box-sizing: border-box;
-            top: 16px;
+            top: 27px;
         }
         .slide.image .box_cover {
             overflow: auto;
@@ -458,18 +461,13 @@
         <div class="box">
             <div class="row">
                 <div class="col">
-                    <h2>Обо мне</h2>
+                    <h2>Сухушин Александр</h2>
                 </div>
             </div>
             <div class="row h_full">
                 <div class="col">
                     <div class="about">
-                        <div class="about__me">
-                            Сухушин Александр
-                        </div>
-                        <div class="about__company">
-                            <a class="link_us" data-title="USERSTORY" href="https://userstory.ru/">USERSTORY</a>
-                        </div>
+                        <a class="link_us" data-title="USERSTORY" href="https://userstory.ru/">USERSTORY</a>
                     </div>
                 </div>
             </div>
@@ -481,11 +479,6 @@
                 flex-direction: column;
                 height: 100%;
                 justify-content: center;
-            }
-            .about__me {
-            }
-            .about__company {
-                padding: 60px;
             }
         </style>
     </section>
@@ -500,20 +493,12 @@
             <div class="row h_full">
                 <div class="col">
                     <div class="box_cover">
-                        <div class="stack__section stack__section_main">
-                            <img class="stack__img" src="pictures/react.svg" alt="react">
-                            <img class="stack__img" src="pictures/redux.svg" alt="redux">
-                            <img class="stack__img" src="pictures/react-router.svg" alt="react-router">
-                            <img class="stack__img" src="pictures/babel.svg" alt="babel">
-                            <img class="stack__img" src="pictures/flow.svg" alt="flow">
-                            <img class="stack__img" src="pictures/webpack.svg" alt="webpack">
-                            <img class="stack__img" src="pictures/eslint.svg" alt="eslint">
-                            <img class="stack__img" src="pictures/stylelint.svg" alt="stylelint">
-                            <img class="stack__img" src="pictures/prettier.svg" alt="prettier">
-                        </div>
-                        <div class="next">
-                            <div class="stack__divider"></div>
-                            <div class="stack__section stack__section_add">
+                        <div class="stack">
+                            <div class="stack__section stack__section_wide">
+                                <img class="stack__img" src="pictures/react.svg" alt="react">
+                            </div>
+                            <div class="stack__section stack__section_divider stack__section_narrow"></div>
+                            <div class="stack__section stack__section_wide stack__section_hidden">
                                 <img class="stack__img" src="pictures/leaflet.svg" alt="react">
                                 <img class="stack__img" src="pictures/websocket.svg" alt="redux">
                             </div>
@@ -523,22 +508,28 @@
             </div>
         </div>
         <style>
+            .stack {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                justify-content: center;
+            }
             .stack__section {
                 margin: 20px auto;
                 text-align: center;
+            }
+            .stack__section_narrow {
+                width: 300px;
+            }
+            .stack__section_wide {
                 width: 500px;
             }
-            .stack__section_add {
-                position: absolute;
-                left: 50%;
-                transform: translate(-50%);
-                white-space: nowrap;
-                width: 500%;
+            .stack__section_hidden {
+                opacity: 0;
             }
-            .stack__divider {
+            .stack__section_divider {
                 border-bottom: 1px solid var(--color-grey);
-                margin: 20px auto;
-                width: 300px;
             }
             .stack__img {
                 height: 60px;
@@ -546,6 +537,32 @@
                 vertical-align: middle;
             }
         </style>
+    </section>
+
+    <section class="slide" id="stack-2">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <h2>Наш стек</h2>
+                </div>
+            </div>
+            <div class="row h_full">
+                <div class="col">
+                    <div class="box_cover">
+                        <div class="stack">
+                            <div class="stack__section stack__section_wide">
+                                <img class="stack__img" src="pictures/react.svg" alt="react">
+                            </div>
+                            <div class="stack__section stack__section_divider stack__section_narrow"></div>
+                            <div class="stack__section stack__section_wide">
+                                <img class="stack__img" src="pictures/leaflet.svg" alt="react">
+                                <img class="stack__img" src="pictures/websocket.svg" alt="redux">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="slide image" id="react−leaflet">
