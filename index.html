@@ -263,6 +263,7 @@
         }
         .slide.image img {
             max-width: 100%;
+            vertical-align: top;
         }
     </style>
 </head>
@@ -636,6 +637,40 @@
         </div>
     </section>
 
+    <section class="slide image" id="map-geo-json">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <h2>Map GeoJSON</h2>
+                </div>
+            </div>
+            <div class="row h_full">
+                <div class="col">
+                    <div class="box_cover">
+                        <img src="pictures/map-geo-json.png" alt="Map GeoJSON">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide image" id="geo-json">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <h2>GeoJSON</h2>
+                </div>
+            </div>
+            <div class="row h_full">
+                <div class="col">
+                    <div class="box_cover">
+                        <img src="pictures/geo-json.png" alt="GeoJSON">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="slide image" id="map-view">
         <div class="box">
             <div class="row">
@@ -687,21 +722,46 @@
         </div>
     </section>
 
-    <section class="slide image" id="geo-json">
+    <section class="slide image map-view-joke" id="map-view-joke">
         <div class="box">
             <div class="row">
                 <div class="col">
-                    <h2>GeoJSON</h2>
+                    <h2>Map View</h2>
                 </div>
             </div>
             <div class="row h_full">
                 <div class="col">
                     <div class="box_cover">
-                        <img src="pictures/geo-json.png" alt="GeoJSON">
+                        <input class="map-view-joke__checkbox" id="map-view-joke-checkbox" type="checkbox">
+                        <label class="map-view-joke__label" for="map-view-joke-checkbox">
+                            <img class="map-view-joke__img" src="pictures/map-view-joke.png" alt="Map View">
+                        </label>
                     </div>
                 </div>
             </div>
         </div>
+        <style>
+            .map-view-joke__checkbox {
+                display: none;
+                position: absolute;
+            }
+            .map-view-joke__label {
+                display: block;
+                height: 100%;
+                overflow: hidden;
+                width: 100%;
+            }
+            .map-view-joke__img {
+                max-width: none !important;
+                width: 824px;
+            }
+            .map-view-joke__checkbox:checked + .map-view-joke__label .map-view-joke__img {
+                width: 14832px;
+                margin-left: -5760px;
+                margin-top: -3834px;
+                transition: all 2s linear;
+            }
+        </style>
     </section>
 
     <section class="slide image" id="map-usage">
