@@ -30,6 +30,24 @@
         }
 
         .shower {
+            --slide-gap: 100px;
+            --slide-ratio: calc(16 / 9);
+            --slide-width: 1024px;
+            --slide-height: calc(
+                var(--slide-width) / var(--slide-ratio)
+            );
+
+            --color-blue: #6897bb;
+            --color-blue-lighter: #6897bb;
+            --color-red: #cc0000;
+            --color-yellow: #fafaa2;
+            --color-grey: #585a5e;
+            --color-fill: rgba(88, 90, 94, 0.1);
+            --color-line: rgba(88, 90, 94, 0.5);
+
+            --ribbon-size: 50px;
+            --progress-size: 10px;
+
             --f-z_xxl: 88px;
             --f-z_xl: 64px;
             --f-z_l: 46px;
@@ -39,9 +57,23 @@
             --f-z_xxs: 12px;
         }
 
-        /*.slide {*/
-        /*    background-color: #eeeeee;*/
-        /*}*/
+        .slide {
+            background-color: #2b2b2b;
+        }
+
+        .slide h2 {
+            color: #a9b7c6;
+        }
+
+        .slide:after {
+            background-image: url('pictures/ribbon.svg');
+            color: #2b2b2b;
+            font-weight: bold;
+        }
+
+        .progress:before {
+            background-color: #305d78;
+        }
 
         .f-z_xxl {
             font-size: var(--f-z_xxl);
@@ -263,6 +295,7 @@
         .link_us:focus:before,
         .link_us:hover:before {
             background-color: #000000;
+            box-shadow: 0 0 60px 30px rgba(255, 255, 255, 0.2);
         }
 
         .link_us:focus:after,
@@ -553,7 +586,7 @@
                 opacity: 0;
             }
             .stack__section_divider {
-                border-bottom: 1px solid var(--color-grey);
+                border-bottom: 1px solid #A9B7C6;
             }
             .stack__img {
                 height: 60px;
@@ -723,6 +756,16 @@
                 </div>
             </div>
         </div>
+        <style>
+            #bounds img {
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        </style>
     </section>
 
     <section class="slide image" id="map-view-2">
@@ -777,7 +820,7 @@
             }
             .map-view-joke__checkbox:checked + .map-view-joke__label .map-view-joke__img {
                 width: 11244px;
-                margin-left: -5250px;
+                margin-left: -5080px;
                 margin-top: -2860px;
                 transition: all 1.5s ease-in;
             }
@@ -812,7 +855,7 @@
                 <div class="col">
                     <div class="box_cover t-a_c">
                         <a href="https://suhushinas.github.io/2019-04-27_renderless-components-example/#/example-map" target="_blank">
-                            <img src="pictures/map-example.png" alt="Map Example">
+                            <img src="pictures/map-example.svg" alt="Map Example">
                         </a>
                     </div>
                 </div>
@@ -882,7 +925,7 @@
                 <div class="col">
                     <div class="box_cover t-a_c">
                         <a href="https://suhushinas.github.io/2019-04-27_renderless-components-example/#/example-socket" target="_blank">
-                            <img src="pictures/socket-example.png" alt="Map Example">
+                            <img src="pictures/socket-example.svg" alt="Map Example">
                         </a>
                         <p>
                             <a href="https://suhushinas.github.io/2019-04-27_renderless-components-example/#/socket-generator" target="_blank">socket-generator</a>
@@ -904,7 +947,7 @@
                 <div class="col">
                     <div class="box_cover t-a_c">
                         <a href="https://suhushinas.github.io/2019-04-27_renderless-components/" target="_blank">
-                            <img src="pictures/self-link.png" alt="Map Example">
+                            <img src="pictures/self-link.svg" alt="Map Example">
                         </a>
                     </div>
                 </div>
