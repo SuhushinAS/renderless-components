@@ -320,11 +320,20 @@
             max-width: 100%;
             vertical-align: top;
         }
+        .slide.qr .box_cover {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
         .slide.qr a {
             background: none;
+            display: block;
+            flex-grow: 1;
         }
         .slide.qr img {
-            max-width: 45%;
+            display: inline-block;
+            margin: 12px;
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -931,9 +940,6 @@
                         <a href="https://suhushinas.github.io/2019-04-27_renderless-components-example/#/example-socket" target="_blank">
                             <img src="pictures/socket-example.svg" alt="WebSockets Example">
                         </a>
-                        <p>
-                            <a href="https://suhushinas.github.io/2019-04-27_renderless-components-example/#/socket-generator" target="_blank">socket-generator</a>
-                        </p>
                     </div>
                 </div>
             </div>
